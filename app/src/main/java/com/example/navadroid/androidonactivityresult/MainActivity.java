@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private final int REQUEST_CODE = 555;
+    private final int RESULT_OK = 0;
 
     private Button button;
 
@@ -38,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
             if (data.hasExtra("returnKey1")) {
                 Toast.makeText(this, data.getExtras().getString("returnKey1"),
                         Toast.LENGTH_SHORT).show();
+            }else if(data.hasExtra("returnKey2")) {
+                Toast.makeText(this, data.getExtras().getString("returnKey2"),
+                        Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this,"No Resualt",Toast.LENGTH_SHORT).show();
             }
         }
     }
